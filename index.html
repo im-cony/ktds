@@ -4,78 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KT DS Projects — Cony</title>
+<!-- AI-KMS Design System v1.0 토큰 (라이브) -->
+<link rel="stylesheet" href="https://www.subi365.app/ktds/kms/design-system/tokens.css">
 <style>
+  /* ============================================
+   * KTDS Projects Hub — AI-KMS Design System v1.0
+   * 모든 색·여백·폰트·그림자·모서리는 디자인 토큰만 사용
+   * ============================================ */
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    font-family: 'Pretendard', 'Malgun Gothic', -apple-system, sans-serif;
-    background: linear-gradient(135deg, #1a3a6c 0%, #2e7d32 100%);
+    font-family: var(--font-sans);
+    background: var(--color-bg);
     min-height: 100vh;
-    color: #2c3e50;
-    line-height: 1.6;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  /* KT 시그니처 레드 상단 액센트 */
+  body::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--color-brand-500);
+  }
+
   .wrap {
     max-width: 800px;
     margin: 0 auto;
-    padding: 80px 24px;
+    padding: var(--space-20) var(--space-6);
   }
+
   .hero {
-    background: #fff;
-    border-radius: 16px;
-    padding: 48px 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-12) var(--space-10);
+    box-shadow: var(--shadow-3);
   }
+
   .badge {
     display: inline-block;
-    background: #1a3a6c;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    letter-spacing: 0.5px;
+    background: var(--color-brand-50);
+    color: var(--color-brand-700);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
   }
+
   h1 {
-    font-size: 36px;
-    color: #1a3a6c;
-    font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    font-size: var(--font-size-h1);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-2);
+    letter-spacing: var(--letter-spacing-snug);
+    line-height: var(--line-height-tight);
   }
-  .sub { font-size: 15px; color: #6b7280; margin-bottom: 32px; }
-  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+  .sub {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+  }
+
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+
   .card {
     display: block;
     text-decoration: none;
-    background: #fff;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 24px;
-    transition: all 0.2s;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--duration-normal) var(--ease-out);
     color: inherit;
   }
   .card:hover {
-    border-color: #2e7d32;
+    border-color: var(--color-brand-500);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(46,125,50,0.15);
+    box-shadow: var(--shadow-3);
   }
-  .card-icon { font-size: 32px; margin-bottom: 8px; }
-  .card-title { font-size: 18px; font-weight: 700; color: #1a3a6c; margin-bottom: 4px; }
-  .card-desc { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
-  .card-meta { font-size: 11px; color: #9ca3af; }
-  .card-cta { display: inline-block; color: #2e7d32; font-size: 13px; font-weight: 600; margin-top: 12px; }
+  .card:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-color: var(--color-brand-500);
+  }
+
+  .card-icon {
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--space-2);
+    line-height: 1;
+  }
+  .card-title {
+    font-size: var(--font-size-bodyLg, 18px);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+  }
+  .card-desc {
+    font-size: var(--font-size-caption);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+    line-height: var(--line-height-normal);
+  }
+  .card-meta {
+    font-size: var(--font-size-small);
+    color: var(--color-text-tertiary);
+  }
+  .card-cta {
+    display: inline-block;
+    color: var(--color-brand-500);
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-semibold);
+    margin-top: var(--space-3);
+  }
 
   footer {
     text-align: center;
-    margin-top: 24px;
-    color: rgba(255,255,255,0.85);
-    font-size: 12px;
+    margin-top: var(--space-6);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-caption);
   }
+  footer a { color: var(--color-brand-500); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
   <div class="wrap">
     <div class="hero">
+      <span class="badge">KT DS · 26년</span>
       <h1>KT DS Projects</h1>
       <p class="sub">진행 중인 KT DS 프로젝트 모음</p>
       <div class="grid">
@@ -96,7 +157,7 @@
       </div>
     </div>
     <footer>
-      © 2026 KT DS · Powered by Vercel
+      © 2026 KT DS · <a href="/ktds/kms/design-system/">Design System v1.0</a>
     </footer>
   </div>
 </body>
