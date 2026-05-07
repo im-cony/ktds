@@ -93,6 +93,11 @@
     box-shadow: var(--shadow-focus);
     border-color: var(--color-brand-500);
   }
+  /* 메인 산출물 카드 — 좌측 4px 액센트 바 (Confluence/Notion 스타일) */
+  .card.card-main {
+    border-left: 4px solid var(--color-brand-500);
+    padding-left: calc(var(--space-6) - 3px);
+  }
 
   .card-icon {
     font-size: var(--font-size-h1);
@@ -140,7 +145,7 @@
       <h1>KT DS Projects</h1>
       <p class="sub">진행 중인 KT DS 프로젝트 모음</p>
       <div class="grid">
-        <a href="/ktds/kms/" class="card">
+        <a href="/ktds/kms/" class="card card-main">
           <div class="card-icon">🤖</div>
           <div class="card-title">AI-KMS</div>
           <div class="card-desc">AICC 연계 AI 기반 지식관리시스템 — RAG·LLM 기반 차세대 KMS</div>
